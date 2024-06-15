@@ -12,6 +12,18 @@
         {% endblock %}
     </head>
     <body>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') and app.request.get('_route') not in ['app_login', 'app_logout'] %}
+            <header>
+                <!-- Aquí va el contenido de tu header -->
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/profile">Profile</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </nav>
+            </header>
+        {% endif %}
         {% block body %}{% endblock %}
     </body>
 </html>
