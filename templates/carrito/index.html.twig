@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Carrito de la compra
+{% endblock %}
+{% block body %}
+    <main>
+        <h1>
+            Carrito de la compra
+        </h1>
+        {% for key, value in carrito %}
+            <p>
+                {{ value['productoNombre'] }}
+                -
+                {{ value['unidades'] }}
+                unidades
+                <a class="btn" href="{{ path('app_carrito_sum', {'id': value['id']}) }}">
+                    +
+                </a>
+                <a class="btn" href="{{ path('app_carrito_res', {'id': value['id']}) }}">
+                    -
+                </a>
+                <a class="btn" href="{{ path('app_carrito_delete', {'id': value['id']}) }}">
+                    Eliminar
+                </a>
+            </p>
+        {% endfor %}
+        <a class="btn" href="{{ path('app_pedidos_new') }}">
+            Comprar pedido
+        </a>
+    </main>
+{% endblock %}

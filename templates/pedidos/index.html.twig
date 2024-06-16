@@ -3,6 +3,7 @@
 {% block title %}Pedidos index{% endblock %}
 
 {% block body %}
+<main>
     <h1>Pedidos index</h1>
 
     <table class="table">
@@ -11,6 +12,7 @@
                 <th>Id</th>
                 <th>Fecha</th>
                 <th>Enviado</th>
+                <th>Restaurante</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,9 +22,10 @@
                 <td>{{ pedido.id }}</td>
                 <td>{{ pedido.fecha ? pedido.fecha|date('Y-m-d') : '' }}</td>
                 <td>{{ pedido.enviado }}</td>
+                <td>{{ restaurantes[pedido.id] }}</td>
                 <td>
-                    <a href="{{ path('app_pedidos_show', {'id': pedido.id}) }}">show</a>
-                    <a href="{{ path('app_pedidos_edit', {'id': pedido.id}) }}">edit</a>
+                    <a class="btn" href="{{ path('app_pedidos_show', {'id': pedido.id}) }}">show</a>
+                    <a class="btn" href="{{ path('app_pedidos_edit', {'id': pedido.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +36,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_pedidos_new') }}">Create new</a>
+    <a class="btn" href="{{ path('app_pedidos_new') }}">Create new</a>
+</main>
 {% endblock %}

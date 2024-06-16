@@ -3,6 +3,7 @@
 {% block title %}Pedidos{% endblock %}
 
 {% block body %}
+<main>
     <h1>Pedidos</h1>
 
     <table class="table">
@@ -19,12 +20,26 @@
                 <th>Enviado</th>
                 <td>{{ pedido.enviado }}</td>
             </tr>
+            <tr>
+                <th>Productos</th>
+                <td>
+                    <ul>
+                        {% for producto in productos %}
+                        
+                            <li>
+                                <a href="{{ path('app_productos_show', {'id': producto.id}) }}">{{ producto.nombre }} - {{ producto.unidades }} unidades</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_pedidos_index') }}">back to list</a>
+    <a class="btn" href="{{ path('app_pedidos_index') }}">back to list</a>
 
-    <a href="{{ path('app_pedidos_edit', {'id': pedido.id}) }}">edit</a>
+    <a class="btn" href="{{ path('app_pedidos_edit', {'id': pedido.id}) }}">edit</a>
 
     {{ include('pedidos/_delete_form.html.twig') }}
+</main>
 {% endblock %}

@@ -3,6 +3,7 @@
 {% block title %}Restaurantes{% endblock %}
 
 {% block body %}
+<main>
     <h1>Restaurantes</h1>
 
     <table class="table">
@@ -35,12 +36,17 @@
                 <th>Direccion</th>
                 <td>{{ restaurante.direccion }}</td>
             </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ restaurante.nombre }}</td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_restaurantes_index') }}">back to list</a>
+    <a class="btn" href="{{ path('app_restaurantes_index') }}">back to list</a>
 
-    <a href="{{ path('app_restaurantes_edit', {'id': restaurante.id}) }}">edit</a>
+    <a class="btn" href="{{ path('app_restaurantes_edit', {'id': restaurante.id}) }}">edit</a>
 
     {{ include('restaurantes/_delete_form.html.twig') }}
+</main>
 {% endblock %}

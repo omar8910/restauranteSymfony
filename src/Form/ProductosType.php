@@ -21,7 +21,7 @@ class ProductosType extends AbstractType
             ->add('stock')
             ->add('categoria', EntityType::class, [
                 'class' => Categorias::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nombre',
             ])
             // ->add('pedidos', EntityType::class, [
             //     'class' => Pedidos::class,

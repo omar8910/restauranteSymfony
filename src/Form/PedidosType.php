@@ -21,13 +21,13 @@ class PedidosType extends AbstractType
             ->add('enviado')
             ->add('restaurante', EntityType::class, [
                 'class' => Restaurantes::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nombre',
             ])
-            ->add('productos', EntityType::class, [
-                'class' => Productos::class,
-                'choice_label' => 'id',
-                'multiple' => true,
-            ])
+            // ->add('productos', EntityType::class, [
+            //     'class' => Productos::class,
+            //     'choice_label' => 'nombre',
+            //     'multiple' => true,
+            // ])
         ;
     }
 

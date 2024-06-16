@@ -3,6 +3,7 @@
 {% block title %}Categorias index{% endblock %}
 
 {% block body %}
+<main>
     <h1>Categorias index</h1>
 
     <table class="table">
@@ -21,8 +22,8 @@
                 <td>{{ categoria.nombre }}</td>
                 <td>{{ categoria.descripcion }}</td>
                 <td>
-                    <a href="{{ path('app_categorias_show', {'id': categoria.id}) }}">show</a>
-                    <a href="{{ path('app_categorias_edit', {'id': categoria.id}) }}">edit</a>
+                    <a class="btn" href="{{ path('app_categorias_show', {'id': categoria.id}) }}">show</a>
+                    <a class="btn" href="{{ path('app_categorias_edit', {'id': categoria.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +34,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_categorias_new') }}">Create new</a>
+    <a class="btn" href="{{ path('app_categorias_new') }}">Create new</a>
+</main>
 {% endblock %}

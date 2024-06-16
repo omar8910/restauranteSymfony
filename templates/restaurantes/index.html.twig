@@ -3,6 +3,7 @@
 {% block title %}Restaurantes index{% endblock %}
 
 {% block body %}
+<main>
     <h1>Restaurantes index</h1>
 
     <table class="table">
@@ -15,6 +16,7 @@
                 <th>Cp</th>
                 <th>Ciudad</th>
                 <th>Direccion</th>
+                <th>Nombre</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -28,9 +30,10 @@
                 <td>{{ restaurante.cp }}</td>
                 <td>{{ restaurante.ciudad }}</td>
                 <td>{{ restaurante.direccion }}</td>
+                <td>{{ restaurante.nombre }}</td>
                 <td>
-                    <a href="{{ path('app_restaurantes_show', {'id': restaurante.id}) }}">show</a>
-                    <a href="{{ path('app_restaurantes_edit', {'id': restaurante.id}) }}">edit</a>
+                    <a class="btn" href="{{ path('app_restaurantes_show', {'id': restaurante.id}) }}">show</a>
+                    <a class="btn" href="{{ path('app_restaurantes_edit', {'id': restaurante.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +44,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_restaurantes_new') }}">Create new</a>
+    <a class="btn" href="{{ path('app_restaurantes_new') }}">Create new</a>
+</main>
 {% endblock %}

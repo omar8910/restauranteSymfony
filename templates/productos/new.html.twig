@@ -3,9 +3,11 @@
 {% block title %}New Productos{% endblock %}
 
 {% block body %}
+<main>
     <h1>Create new Productos</h1>
 
     {{ include('productos/_form.html.twig') }}
 
-    <a href="{{ path('app_productos_index') }}">back to list</a>
+    <a class="btn" href="{{ path('app_productos_index') }}">back to list</a>
+</main>
 {% endblock %}

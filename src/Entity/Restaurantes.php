@@ -33,6 +33,9 @@ class Restaurantes
     #[ORM\Column(length: 200)]
     private ?string $direccion = null;
 
+    #[ORM\Column(length: 200)]
+    private ?string $nombre = null;
+
     /**
      * @var Collection<int, Pedidos>
      */
@@ -147,6 +150,18 @@ class Restaurantes
                 $pedido->setRestaurante(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNombre(): ?string
+    {
+        return $this->nombre;
+    }
+
+    public function setNombre(string $nombre): static
+    {
+        $this->nombre = $nombre;
 
         return $this;
     }

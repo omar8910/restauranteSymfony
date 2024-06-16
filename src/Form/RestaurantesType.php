@@ -18,6 +18,7 @@ class RestaurantesType extends AbstractType
             ->add('cp')
             ->add('ciudad')
             ->add('direccion')
+            ->add('nombre')
         ;
     }
 
